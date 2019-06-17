@@ -1,0 +1,74 @@
+{{>header}}
+<br>
+<div class="container">	
+	<div class="row">
+		<div class="col">
+			<p>Por favor ingrese los datos del curso que desea registrar:</p>
+		</div>
+		<div class="col col-lg-2">
+			<button onclick="location.href='/administrador'" type="submit" class="btn btn-secondary btn-sm">Regresar a Inicio</button>
+		</div>
+	</div>		
+	<br>
+	<form action="/confirmacionCurso" method="post">
+		<strong>Datos obligatorios:</strong><br>
+			<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">Nombre</div>
+		        		</div>
+		        		<input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		    </div>
+			<div class="col-auto">
+				<label class="sr-only" for="inlineFormInputGroup">Something</label>
+				<div class="input-group mb-2">
+						<div class="input-group-prepend">
+								<div class="input-group-text">Id del curso</div>
+					    </div>
+					    <input type="number" name="id" class="form-control" id="inlineFormInputGroup" required="true">
+				</div>
+		    </div>
+			<div class="col-auto">
+				<label class="sr-only" for="inlineFormInputGroup">Something</label>
+				<div class="input-group mb-2">
+						<div class="input-group-prepend">
+								<div class="input-group-text">Descripción del Curso</div>
+					    </div>
+					    <input name="descripcion" type="text" class="form-control" id="inlineFormInputGroup" required="true">
+				</div>
+		    </div>
+			<div class="col-auto">
+				<label class="sr-only" for="inlineFormInputGroup">Something</label>
+				<div class="input-group mb-2">
+						<div class="input-group-prepend">
+								<div class="input-group-text">Precio</div>
+					    </div>
+					    <input type="number" name="precio" class="form-control" id="inlineFormInputGroup" required="true">
+				</div>
+		    </div>
+		<strong>Datos opcionales:</strong><br><br>
+			<div class="col-auto my-1">
+     			<label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Modalidad</label>
+      			<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="modalidad">
+        			<option selected disabled hidden>Escoja una opción</option>
+        			<option value="presencial">Presencial</option>
+        			<option value="virtual">Virtual</option>
+        		</select>
+    		</div>
+			<div class="col-auto">
+				<label class="sr-only" for="inlineFormInputGroup">Something</label>
+				<div class="input-group mb-2">
+						<div class="input-group-prepend">
+								<div class="input-group-text">Cantidad de horas</div>
+					    </div>
+					    <input type="number" name="intensidad" class="form-control" id="inlineFormInputGroup">
+				</div>
+		    </div>
+			<div class="col-auto my-1">
+      			<button type="submit" class="btn btn-success">Guardar</button>
+    		</div>
+	</form>
+</div>
+{{>footer}}

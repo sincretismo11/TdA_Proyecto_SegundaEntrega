@@ -1,0 +1,52 @@
+{{>header}}
+  <br>
+  <div class="container"> 
+    <div class="row">
+        <div class="col"> 
+          <p>Los cursos registrados en este momento son:</p><br>
+        </div>
+        <div class="col col-lg-2">
+          <button onclick="location.href='/administrador'" class="btn btn-secondary btn-sm">Regresar a Inicio</button> 
+        </div>
+    </div>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Curso</th>
+          <th scope="col">ID</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Modalidad</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Intensidad Horaria</th>
+        </tr>
+      </thead>
+      {{#each cursos}}
+        <tr>
+          <td>{{this.nombre}}</td>
+          <td>{{this.id}}</td>
+          <td>{{this.descripcion}}</td>
+          <td>${{this.precio}}</td>
+          <td>{{this.modalidad}}</td>
+          <td>{{this.estado}}</td>
+          <td>
+            {{#if this.intensidad}}
+              {{this.intensidad}} horas
+            {{else}}
+              Sin definir aún por el docente
+            {{/if}}
+          </td>
+        </tr>
+      {{else}}
+        <tr>No existen aún cursos registrados en el sistema</tr>
+      {{/each}}
+      </tr>
+    </table>
+    <p>Por favor ingrese el ID del curso y seleccione la acción que desea realizar:</p>
+    <form method="post">
+      <input type="number" name="id" placeholder="ID del curso" required>
+    	<button type="submit" formaction="/editarCurso" class="btn btn-success">Cambiar Estado</button>
+      <button type="submit" formaction="/estudiantes" class="btn btn-success">Listar Matriculados</button>
+    </form>       
+  </div>
+{{>footer}}

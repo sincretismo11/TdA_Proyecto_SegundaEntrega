@@ -1,0 +1,18 @@
+#banner{
+	background-color: rgb(0, 153, 51); 
+	padding: 20px; 
+	color: white;
+	text-align: center;
+	font-size: 20px;
+}
+#logo{
+	width:90px;
+	height:90px;
+	float: left;
+}
+
+#footer{
+	background-color: rgb(0, 153, 51); 
+	padding: 20px; 
+	color: white;
+}

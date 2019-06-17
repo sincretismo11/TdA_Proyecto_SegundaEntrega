@@ -1,0 +1,66 @@
+{{>header}}
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<p>Por favor ingrese los datos del curso al que se desea matricular:</p>
+		</div>
+		<div class="col col-lg-2">
+			<button onclick="location.href='/aspirante'" class="btn btn-secondary btn-sm">Regresar a Inicio</button> 
+		</div>
+	</div>	
+	<br>
+	<form action="/confirmacionMatricula" method="post">
+		<strong>Datos obligatorios:</strong><br>
+		<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">Nombre</div>
+		        		</div>
+		        		<input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		</div>
+		<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">ID</div>
+		        		</div>
+		        		<input type="number" name="cedula" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		</div>
+		<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">eMail</div>
+		        		</div>
+		        		<input type="text" name="correo" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		</div>
+		<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">Teléfono</div>
+		        		</div>
+		        		<input type="number" name="telefono" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		</div>
+		<strong>A continuación, ingrese el código del curso que desea matricular:</strong><br>
+		<div class="col-auto">
+	 		    <label class="sr-only" for="inlineFormInputGroup">Something</label>
+		    	<div class="input-group mb-2">
+		        		<div class="input-group-prepend">
+		          				<div class="input-group-text">Código</div>
+		        		</div>
+		        		<input type="number" name="codigoCurso" class="form-control" id="inlineFormInputGroup" required="true">
+		      	</div>
+		</div>
+		<br>
+		<button class="btn btn-success">Guardar</button>
+	</form>
+	<br>
+</div>
+{{>footer}}

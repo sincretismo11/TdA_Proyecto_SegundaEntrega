@@ -1,0 +1,41 @@
+{{>header}}
+<div class="container">
+	{{#if (listarEstudiantes  id)}}
+		{{{listarEstudiantes id}}}
+			<p>Si desea eliminar a un estudiante de esta lista de matriculados, verifique el código del curso e  ingrese el número de identificación del estudiante:</p>
+			<form action="/eliminarEstudiante" method="post">
+				<div class="form-row">	
+				    <div class="col">
+				    	<div class="col-auto">
+					      <label class="sr-only" for="inlineFormInputGroup">{{id}}</label>
+					      <div class="input-group mb-2">
+					        <div class="input-group-prepend">
+					          <div class="input-group-text">Grupo</div>
+					        </div>
+					        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder={{id}} readonly="true">
+					      </div>
+					    </div>
+				    </div>
+				    <div class="col-auto">
+				      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+				      <div class="input-group mb-2">
+				        <div class="input-group-prepend">
+				          <div class="input-group-text">Id del estudiante</div>
+				        </div>
+				        <input type="text" class="form-control" name="idEstudiante" id="inlineFormInputGroup" required="true">
+				      </div>
+				    </div>
+				    <div class="col">
+				    	<button class="btn btn-outline-danger">Eliminar</button>
+				    </div>				    
+				</div>    
+			</form>
+		{{else}}
+			<br><b>ERROR!</b> No existen estudiantes matriculados en ese curso. Por favor, verificar.<br>
+	{{/if}}
+<br>
+<button onclick="location.href='/cursos'" class="btn btn-secondary btn-sm">Regresar a Cursos</button>
+
+</div>
+
+{{>footer}}

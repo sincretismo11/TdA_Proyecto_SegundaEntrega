@@ -1,0 +1,36 @@
+{{>header}}
+<br>
+<div class="container">
+{{#if (listarCursosDisponibles)}}
+  <div class="row">
+    <div class="col">
+         <p>Los cursos disponibles en este momento son:</p>
+    </div>
+    <div class="col col-lg-2">
+          <button onclick="location.href='/aspirante'" class="btn btn-secondary btn-sm">Regresar a Inicio
+          </button> 
+    </div>
+  </div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Curso</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    {{{listarCursosDisponibles}}}
+  </table>
+{{else}}
+  <div class="row">
+    <div class="col">
+          <b>ERROR!</b> No existen cursos disponibles en este momento. Agradecemos su comprensión.
+    </div>
+    <div class="col col-lg-2">
+          <button onclick="location.href='/aspirante'" class="btn btn-secondary btn-sm">Regresar a Inicio</button> 
+    </div>
+  </div>
+{{/if}}
+</div>
+    
+{{>footer}}
