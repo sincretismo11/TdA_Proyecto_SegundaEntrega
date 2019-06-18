@@ -108,7 +108,9 @@ hbs.registerHelper('listarEstudiantes', id =>{
 
 hbs.registerHelper('eliminarEstudiante',(idEst, idCur)=>{
 	validarArchivoEstudiantes();
+	console.log("idEst = "+idEst+" e idCur = "+idCur);
 	var indiceAlumno = listaEstudiantes.findIndex(j => (j.cedula == idEst && j.curso == idCur));
+	console.log(indiceAlumno.length);
 	if(indiceAlumno != -1){
 		var nombre = listaEstudiantes[indiceAlumno].nombre;
 		listaEstudiantes.splice(indiceAlumno,1);
